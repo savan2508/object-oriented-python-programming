@@ -1,4 +1,5 @@
 import webbrowser
+from filestack import Client
 
 from fpdf import FPDF
 
@@ -23,7 +24,7 @@ def get_flatmates(total_flatmates: int) -> dict:
     return flatmates_name
 
 
-def pays(flatmates_name,bill: Bill):
+def pays(flatmates_name, bill: Bill):
     flatmates_pay = {}
     total_days = sum(flatmates_name.values())
 
@@ -58,13 +59,26 @@ def generate(flatmates_name, flatmates_pay, bill):
     flatmates_pay_value = list(flatmates_pay.values())
 
     for i in range(len(flatmates_name)):
-
         pdf.cell(100, 40, txt=f'{flatmates_name_key[i]}', border=1)
         pdf.cell(150, 40, txt=f'${flatmates_pay_value[i]}', border=1)
         pdf.cell(150, 40, txt=f'{flatmates_name_value[i]}', border=1, ln=1)
 
     pdf.output(f'{bill.period}.pdf')
     webbrowser.open(f'{bill.period}.pdf')
+
+
+class FileSharer:
+
+    def __init__(self, filepath, api_key):
+        self.filepath = filepath
+        self.api_key = api_key
+
+    def share(self):
+        client = Client(self.api_key)
+
+        new_filelink = client.upload(filepath=self.filepath)
+        return new_filelink.url
+
 
 
 bill_amount = float(input('What is the total amount of the bill? '))
@@ -75,9 +89,9 @@ the_bill = Bill(bill_amount, bill_period)
 total_flatmates = int(input('How many members are in the house? '))
 flatmates_name = get_flatmates(total_flatmates)
 # print(flatmates_name)
-flatmates_pay = pays(flatmates_name,the_bill)
+flatmates_pay = pays(flatmates_name, the_bill)
 # print(flatmates_pay)
-generate(flatmates_name,flatmates_pay,the_bill)
+generate(flatmates_name, flatmates_pay, the_bill)
 # a = {'a': 1, 'b': 2, 'c': 3}
 # b = {'a': 4, 'b': 5, 'c': 6}
 # generate(a, b, the_bill)
