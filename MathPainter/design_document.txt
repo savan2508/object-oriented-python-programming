@@ -1,0 +1,9 @@
+Title: Math Painting
+Description: This is a program lets the user provide the start coordinates of geometrical shapes such
+as squares and rectangles, their dimensions, and their colors, and the program produce an
+image file canvas with the geometrical shapes drawn in it.
+
+Object:
+Square: a, b side, color, drawn(canvas)
+rectangle: A, b, width, height, color, draw
+canvas: width, height, color, make(image path)
