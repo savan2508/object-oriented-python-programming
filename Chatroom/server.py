@@ -18,7 +18,7 @@ def broadcast(msg, prefix=""):
 def handle_clients(conn, address):
     name = conn.recv(1024).decode()
     welcome = "Welcome " + name + ". You can type #quit if you ever want to leave the chat room."
-    conn.recv(bytes(welcome, "utf8"))
+    conn.send(bytes(welcome, "utf8"))
     msg = name + " has recently joined the Chat room."
     broadcast(bytes(msg,"utf8"))
     clients[conn] = name
