@@ -1,5 +1,16 @@
 # CaloriesCalculator
-This is a simple Flask application that allows users to calculate their daily caloric needs and provides temperature information for a specified country and city. The app consists of two pages: a home page and a calories form page.
+
+This is a Python Flask web application that calculates the number of calories needed by an individual based on their weight, height, age, and location's temperature.
+
+The app is defined using Flask, and it has two pages: a home page and a calories form page. The home page is defined by the HomePage class, which inherits from Flask's MethodView class. The get() method of the HomePage class renders the index.html template.
+
+The calories form page is defined by the CaloriesFormPage class, which also inherits from Flask's MethodView class. The get() method of the CaloriesFormPage class creates an instance of the CaloriesForm class and renders the calories_form_page.html template with the form as context. The post() method of the CaloriesFormPage class receives the form data, creates an instance of the Temperature class to get the current temperature in the user's location, and then creates an instance of the Calories class with the user's information and the temperature. Finally, it calculates the number of calories needed by the user and renders the calories_form_page.html template with the form and result as context.
+
+The CaloriesForm class is a subclass of the Form class from the wtforms library. It defines the form fields and a submit button. The calories_form_page.html template renders the form fields and result, if available.
+
+The Temperature and Calories classes are defined in separate Python files (temperature.py and calories.py, respectively) and imported into this file. They handle the logic for getting the temperature and calculating the calories, respectively.
+
+The application can be run using app.run() function call with the debug argument set to True.
 
 # Installation
 To run this application, you will need to install the following:
