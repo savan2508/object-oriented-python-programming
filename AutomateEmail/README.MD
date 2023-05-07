@@ -13,7 +13,7 @@ yagmail
 1. Clone the repository:
 
     bash Copy code
-    git clone https://github.com/your_username/your_project.git
+    git clone https://github.com/savan2508/object-oriented-python-programming/tree/master/AutomateEmail
 2. Install the required packages:
    bash
    Copy code
