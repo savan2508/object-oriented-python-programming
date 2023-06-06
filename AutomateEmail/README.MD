@@ -28,8 +28,6 @@ yagmail
 ## Usage
 * To run the script, simply execute the following command:
 
-bash
-Copy code
 python main.py
 
 * The script will send an email to each recipient listed in email_list.xlsx with news articles based on their interests.
