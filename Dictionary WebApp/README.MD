@@ -51,6 +51,18 @@ The jp.justpy(port=8001) line starts the JustPy server on port 8001, making the 
 - `data.csv`: This CSV file contains the word definitions used by the application.
 - `DictionaryWebapp.exe`: The Windows executable file for running the web application.
 
+### API
+
+The Dictionary Webapp also provides an API for retrieving word definitions programmatically. You can make a GET request to the `/api` endpoint with the `w` query parameter specifying the word for which you want the definition. The API will return a JSON response containing the word and its definition.
+
+To use the API, refer to the API documentation section for detailed information on the API endpoint and usage.
+
+## API Documentation
+
+For detailed information on how to use the API and its endpoints, please refer to the [API Documentation](API_DOCUMENTATION.md) file.
+
+## Contributing
+
 ## Contributing
 
 Contributions to this repository are welcome. If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.

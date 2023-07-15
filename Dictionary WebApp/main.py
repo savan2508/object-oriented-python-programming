@@ -6,6 +6,8 @@ from Webapp.about import About
 from Webapp.home import Home
 from Webapp import page
 from Webapp.dictionary import Dictionary
+from Webapp.documentation import Documentation
+from api.api import Api
 
 imports = list(globals().values())
 
@@ -17,5 +19,6 @@ for obj in imports:
 # jp.Route(Home.path, Home.serve)
 # jp.Route(About.path, About.serve)
 # jp.Route(Dictionary.path, Dictionary.serve)
+jp.Route("/api", Api.serve)
 
 jp.justpy(port=8001)

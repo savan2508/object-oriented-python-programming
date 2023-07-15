@@ -19,6 +19,8 @@ class DefaultLayout(jp.QLayout):
         jp.A(a=qlist, text="Dictionary", href="/dictionary", classes=a_classes)
         jp.Br(a=qlist)
         jp.A(a=qlist, text="About", href="/about", classes=a_classes)
+        jp.Br(a=qlist)
+        jp.A(a=qlist, text="API Documentation", href="/documentation", classes=a_classes)
 
         jp.QBtn(a=toolbar, dense=True, flat=True, round=True, icon="menu",
                 click=self.move_drawer, drawer=drawer)
