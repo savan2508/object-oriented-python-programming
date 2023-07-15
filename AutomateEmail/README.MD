@@ -13,7 +13,7 @@ yagmail
 1. Clone the repository:
 
     bash Copy code
-    git clone https://github.com/your_username/your_project.git
+    git clone https://github.com/savan2508/object-oriented-python-programming/tree/master/AutomateEmail
 2. Install the required packages:
    bash
    Copy code
@@ -28,8 +28,6 @@ yagmail
 ## Usage
 * To run the script, simply execute the following command:
 
-bash
-Copy code
 python main.py
 
 * The script will send an email to each recipient listed in email_list.xlsx with news articles based on their interests.
